@@ -18,7 +18,7 @@ export function SuggestionList({ suggestions, selected, activeParam }: Suggestio
   return (
     <ul className="suggestions">
       {suggestions.map((suggestion) => {
-        const paramIndex = getParamIndex(suggestion, activeParam);
+        const paramIndex = suggestion.key === selected ? getParamIndex(suggestion, activeParam) : -1;
         const help = paramIndex >= 0 ? suggestion.params[paramIndex].help : suggestion.help;
 
         return (

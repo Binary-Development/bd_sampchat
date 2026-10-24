@@ -6,6 +6,10 @@ It replaces the default `chat` resource and works with anything that already sen
 
 Works with ESX, QBCore, Qbox, ox_core and ND_Core, or standalone.
 
+## Showcase
+
+[![bd_sampchat showcase](https://img.youtube.com/vi/Yj6vls_cIEE/maxresdefault.jpg)](https://www.youtube.com/watch?v=Yj6vls_cIEE)
+
 ## Why I made this
 
 We (Me & Noah) mostly work on semi-serious and serious RP servers. A lot of them run a SA:MP style chat, and they all run into the same problems. It's usually a chat resource, a separate `/me` script and one or two `/ame` scripts that fight over the same command. Text above heads gets sent to the whole server, and each player's game works out whether to show it. People paste weird text and the chat breaks. So I rebuilt it as one resource that does it properly.
