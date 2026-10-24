@@ -1,0 +1,183 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
+  user-select: none;
+}
+
+body {
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  text-shadow: 0 0 0.1em #000000, 0 0 0.1em #000000, 0 0 0.1em #000000, 0 0 0.1em #000000;
+}
+
+textarea {
+  user-select: text;
+}
+
+.chat {
+  position: absolute;
+  top: 0.83vw;
+  left: 0.78vw;
+  width: 38vw;
+}
+
+.chat-window {
+  transition: opacity 1s;
+}
+
+.chat-window.is-hidden {
+  opacity: 0;
+}
+
+.messages {
+  height: 16.875vw;
+  overflow: hidden;
+  font-size: 0.833vw;
+  line-height: 1.35;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+}
+
+.line {
+  margin-bottom: 0.104vw;
+}
+
+.line.is-multiline {
+  margin-left: 1vw;
+  text-indent: -1vw;
+  white-space: pre-line;
+}
+
+.line pre {
+  font-family: inherit;
+  white-space: pre-wrap;
+}
+
+.chat-input {
+  margin-top: 0.42vw;
+}
+
+.input-row {
+  display: flex;
+  align-items: center;
+}
+
+.input-box {
+  position: relative;
+  flex: 1;
+  background-color: rgba(0, 0, 0, 0.56);
+}
+
+.input-box textarea,
+.input-ghost {
+  padding: 0.52vw 0.31vw;
+  font-family: inherit;
+  font-size: 0.94vw;
+  font-weight: inherit;
+  line-height: 1.04vw;
+  text-shadow: inherit;
+}
+
+.input-box textarea {
+  position: relative;
+  display: block;
+  width: 100%;
+  border: 0;
+  outline: none;
+  resize: none;
+  overflow: hidden;
+  color: #ffffff;
+  background: transparent;
+}
+
+.input-ghost {
+  position: absolute;
+  inset: 0;
+  white-space: pre;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.ghost-typed {
+  color: transparent;
+}
+
+.ghost-rest {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.counter {
+  width: 2.86vw;
+  margin-left: 0.52vw;
+  font-size: 0.83vw;
+}
+
+.counter.is-full {
+  color: #ff6347;
+}
+
+.suggestions {
+  width: calc(100% - 3.38vw);
+  padding: 0.26vw 0.52vw;
+  list-style: none;
+  font-size: 0.94vw;
+  background-color: rgba(0, 0, 0, 0.66);
+}
+
+.suggestion {
+  padding: 0.1vw 0;
+  color: #b0bbbd;
+}
+
+.suggestion.is-selected .suggestion-name,
+.param.is-active {
+  color: #ffffff;
+}
+
+.help {
+  display: block;
+  font-size: 0.83vw;
+  color: #b0bbbd;
+}
+
+.hide-state {
+  margin-top: 0.26vw;
+  font-size: 0.94vw;
+}
+
+.color-0 { color: #ffffff; }
+.color-1 { color: #ff4444; }
+.color-2 { color: #99cc00; }
+.color-3 { color: #ffbb33; }
+.color-4 { color: #0099cc; }
+.color-5 { color: #33b5e5; }
+.color-6 { color: #aa66cc; }
+.color-7 { color: #ffffff; }
+.color-8 { color: #cc0000; }
+.color-9 { color: #cc0068; }
+
+.game-w { color: #ffffff; }
+.game-r { color: #ff4444; }
+.game-g { color: #99cc00; }
+.game-y { color: #ffbb33; }
+.game-b { color: #33b5e5; }
+.game-p { color: #c57bff; }
+.game-s { color: #ffffff; }
+.game-o { color: #ff6f00; }
+.game-c { color: #9c9c9c; }
+.game-m { color: #ff69b4; }
+.game-q { color: #bfff00; }
+.game-l { color: #0000ff; }
+.game-u { color: #000000; }
