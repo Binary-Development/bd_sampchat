@@ -5,6 +5,8 @@ local hideStates = { active = 'always', always = 'hidden', hidden = 'active' }
 
 local nuiReady = false
 local inputOpen = false
+local inputFocused = false
+local watchingFocus = false
 local forcedHidden = false
 local refreshAt = 0
 local refreshScheduled = false
@@ -138,6 +140,7 @@ end
 
 local function closeInput()
     inputOpen = false
+    inputFocused = false
     SetNuiFocus(false, false)
     setTyping(false)
 end
@@ -150,10 +153,32 @@ local function openInput()
     SendNUIMessage({ action = 'open' })
 end
 
+local function hasLostFocus()
+    return not IsNuiFocused() or IsPauseMenuActive()
+end
+
+local function watchFocus()
+    watchingFocus = true
+
+    repeat
+        Wait(100)
+    until not inputFocused or hasLostFocus()
+
+    watchingFocus = false
+
+    if not inputFocused then return end
+
+    closeInput()
+    SendNUIMessage({ action = 'close' })
+end
+
 local function focusInput()
     if not inputOpen then return end
 
+    inputFocused = true
     SetNuiFocus(true, false)
+
+    if not watchingFocus then CreateThread(watchFocus) end
 end
 
 local function cycleHideState()

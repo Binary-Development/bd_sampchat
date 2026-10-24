@@ -38,6 +38,7 @@ export type HideLabels = Record<HideState, string>;
 export type NuiEvent =
   | { action: 'init'; settings: Settings; hideState: HideState; labels: HideLabels }
   | { action: 'open' }
+  | { action: 'close' }
   | { action: 'addMessage'; message: IncomingMessage }
   | { action: 'clear' }
   | { action: 'clearLines' }

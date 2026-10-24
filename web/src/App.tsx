@@ -72,6 +72,9 @@ export default function App() {
       case 'open':
         setInputOpen(true);
         break;
+      case 'close':
+        closeInput();
+        break;
       case 'addMessage':
         addLine(event.message);
         break;
